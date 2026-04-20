@@ -6,6 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Dashboard from "./pages/Dashboard";
 import ImprovedDashboard from "./pages/ImprovedDashboard";
+import ImprovedYeeKee from "./pages/ImprovedYeeKee";
+import ImprovedLottery from "./pages/ImprovedLottery";
 import YeeKeeManagement from "./pages/YeeKeeManagement";
 import LotteryManagement from "./pages/LotteryManagement";
 import Reports from "./pages/Reports";
@@ -19,8 +21,10 @@ function Router() {
       <Route path="" component={ImprovedDashboard} />
       <Route path="/dashboard" component={ImprovedDashboard} />
       <Route path="/old-dashboard" component={Dashboard} />
-      <Route path="/lottery" component={LotteryManagement} />
-      <Route path="/yee-kee" component={YeeKeeManagement} />
+      <Route path="/lottery" component={ImprovedLottery} />
+      <Route path="/yee-kee" component={ImprovedYeeKee} />
+      <Route path="/old-lottery" component={LotteryManagement} />
+      <Route path="/old-yee-kee" component={YeeKeeManagement} />
       <Route path="/reports" component={Reports} />
       <Route path="/members" component={Members} />
       <Route path="/settings" component={Settings} />
