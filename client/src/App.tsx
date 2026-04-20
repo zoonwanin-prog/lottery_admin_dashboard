@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Dashboard from "./pages/Dashboard";
+import ImprovedDashboard from "./pages/ImprovedDashboard";
 import YeeKeeManagement from "./pages/YeeKeeManagement";
 import LotteryManagement from "./pages/LotteryManagement";
 import Reports from "./pages/Reports";
@@ -15,8 +16,9 @@ import Settings from "./pages/Settings";
 function Router() {
   return (
     <Switch>
-      <Route path="" component={Dashboard} />
-      <Route path="/dashboard" component={Dashboard} />
+      <Route path="" component={ImprovedDashboard} />
+      <Route path="/dashboard" component={ImprovedDashboard} />
+      <Route path="/old-dashboard" component={Dashboard} />
       <Route path="/lottery" component={LotteryManagement} />
       <Route path="/yee-kee" component={YeeKeeManagement} />
       <Route path="/reports" component={Reports} />
