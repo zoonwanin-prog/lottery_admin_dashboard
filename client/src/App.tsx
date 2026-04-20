@@ -14,8 +14,8 @@ import Reports from "./pages/Reports";
 import Members from "./pages/Members";
 import Settings from "./pages/Settings";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="" component={ImprovedDashboard} />
