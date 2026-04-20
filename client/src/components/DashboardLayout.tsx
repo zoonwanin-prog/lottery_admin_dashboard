@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, BarChart3, Settings, Users, TrendingUp } from 'lucide-react';
+import { useLocation } from 'wouter';
 import { cn } from '@/lib/utils';
 
 interface DashboardLayoutProps {
@@ -9,6 +10,7 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children, activeTab = 'dashboard' }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [, setLocation] = useLocation();
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
@@ -51,6 +53,18 @@ export default function DashboardLayout({ children, activeTab = 'dashboard' }: D
               return (
                 <button
                   key={item.id}
+                  onClick={() => {
+                    const routeMap: { [key: string]: string } = {
+                      'dashboard': '/',
+                      'lottery': '/lottery',
+                      'yee-kee': '/yee-kee',
+                      'reports': '/reports',
+                      'members': '/members',
+                      'settings': '/settings',
+                    };
+                    setLocation(routeMap[item.id]);
+                    setSidebarOpen(false);
+                  }}
                   className={cn(
                     "w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors",
                     isActive
