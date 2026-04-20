@@ -7,6 +7,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Dashboard from "./pages/Dashboard";
 import YeeKeeManagement from "./pages/YeeKeeManagement";
 import LotteryManagement from "./pages/LotteryManagement";
+import Reports from "./pages/Reports";
+import Members from "./pages/Members";
+import Settings from "./pages/Settings";
 
 
 function Router() {
@@ -16,6 +19,9 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/lottery" component={LotteryManagement} />
       <Route path="/yee-kee" component={YeeKeeManagement} />
+      <Route path="/reports" component={Reports} />
+      <Route path="/members" component={Members} />
+      <Route path="/settings" component={Settings} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
